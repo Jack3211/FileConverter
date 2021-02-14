@@ -8,12 +8,12 @@ namespace FileConverterTests
     [TestClass]
     public class HeadingServiceTests
     {
-        private HeadingService fileConverterService;
+        private HeadingService headingService;
 
         [TestInitialize]
         public void Init()
         {
-            fileConverterService = new HeadingService();
+            headingService = new HeadingService();
         }
 
         [TestMethod]
@@ -25,7 +25,7 @@ namespace FileConverterTests
                 "address_line1",
                 "address_line2"
             };
-            var result = fileConverterService.GenerateHeadings(fields);
+            var result = headingService.GenerateHeadings(fields);
             var expected = getExpectedHeadings();
 
             Assert.AreEqual(expected[0].Name, result[0].Name);
@@ -41,7 +41,7 @@ namespace FileConverterTests
             {
                 "multi_level_test"
             };
-            var result = fileConverterService.GenerateHeadings(fields);
+            var result = headingService.GenerateHeadings(fields);
             var expected = getMultiLevelExpectedHeadings();
 
             Assert.AreEqual(expected[0].Name, result[0].Name);
@@ -57,7 +57,7 @@ namespace FileConverterTests
                 "level_test",
                 "test_data"
             };
-            var result = fileConverterService.GenerateHeadings(fields);
+            var result = headingService.GenerateHeadings(fields);
             var expected = getSameFieldDifferentLevelsHeadings();
 
             Assert.AreEqual(expected[0].Name, result[0].Name);
@@ -150,7 +150,7 @@ namespace FileConverterTests
         [TestCleanup]
         public void Dispose()
         {
-            fileConverterService = null;
+            headingService = null;
         }
     }
 }

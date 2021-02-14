@@ -17,7 +17,6 @@ namespace FileConverter.FileConversionServices
         {
             var rows = new List<string[]>();
             var doument = File.ReadAllLines(path);
-
             var headings = GenerateHeadings(doument[0].Split(','));
 
             doument = doument.Skip(1).ToArray();
