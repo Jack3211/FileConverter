@@ -17,7 +17,7 @@ namespace FileConverterTests
         }
 
         [TestMethod]
-        public void GenerateHeadings_WhenCalledWithTwoGroupedFields_ReturnsDictionaryOfTwo()
+        public void GenerateHeadings_WhenCalledWithTwoGroupedFields_ReturnsListOfTwo()
         {
             var fields = new List<string>()
             {
@@ -35,7 +35,7 @@ namespace FileConverterTests
         }
 
         [TestMethod]
-        public void GenerateHeadings_WhenCalledWithMultiLeveledGrouping_ReturnsDictionaryMultipleMatchingSubHeadings()
+        public void GenerateHeadings_WhenCalledWithMultiLeveledGrouping_ReturnsListOfHeadingsWithMultipleMatchingSubHeadings()
         {
             var fields = new List<string>()
             {
@@ -50,7 +50,7 @@ namespace FileConverterTests
         }
 
         [TestMethod]
-        public void GenerateHeadings_WhenCalledWithFieldsWithSameNameAtDifferentLevels_ReturnsDictionaryWithCorrectNesting()
+        public void GenerateHeadings_WhenCalledWithFieldsWithSameNameAtDifferentLevels_ReturnsListOfHeadingsWithCorrectNesting()
         {
             var fields = new List<string>()
             {
